@@ -10,6 +10,12 @@ import {
 } from './definitions';
 import { formatCurrency } from './utils';
 
+const wait = (time: number) => {
+  return new Promise((res, rej) => {
+    setTimeout(res, time);
+  })
+}
+
 export async function fetchRevenue() {
   // Add noStore() here prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
@@ -23,6 +29,8 @@ export async function fetchRevenue() {
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
+    // console.log('Data fetch start.');
+    // await wait(3000);
     // console.log('Data fetch complete after 3 seconds.');
 
     return data.rows;
@@ -32,6 +40,7 @@ export async function fetchRevenue() {
   }
 }
 
+// Fetch the last 5 invoices, sorted by date
 export async function fetchLatestInvoices() {
   try {
     const data = await sql<LatestInvoiceRaw>`
