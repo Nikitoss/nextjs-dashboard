@@ -20,7 +20,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
 
   return (
     <form action={dispatch} aria-describedby="formfield-error">
-      <div className="rounded-md bg-gray-50 p-4 md:p-6" 
+      <div className="rounded-md bg-gray-50 p-4 md:p-6"
       >
         {/* Customer Name */}
         <div className="mb-4">
@@ -144,7 +144,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
             </div>
           ) : null}
         </fieldset>
-        
+
         {state.message ? (
           <div
             id="formfield-error"
@@ -154,7 +154,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
             <p>{state.message}</p>
           </div>
         ) : null}
-      </div>      
+      </div>
 
       <div className="mt-6 flex justify-end gap-4">
         <Link
