@@ -144,6 +144,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
             </div>
           ) : null}
         </fieldset>
+        
         {state.message ? (
           <div
             id="formfield-error"
@@ -153,7 +154,8 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
             <p>{state.message}</p>
           </div>
         ) : null}
-      </div>
+      </div>      
+
       <div className="mt-6 flex justify-end gap-4">
         <Link
           href="/dashboard/invoices"
